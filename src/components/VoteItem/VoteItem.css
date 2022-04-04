@@ -1,0 +1,19 @@
+li {
+    list-style-type: none;
+
+}
+fieldset {
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 1rem;
+}
+.outerblock{
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+.itempadding{
+    padding-bottom: 2rem;
+}

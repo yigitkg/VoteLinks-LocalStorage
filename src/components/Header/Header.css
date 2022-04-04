@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    align-content: stretch;
+    justify-content: space-between;
+    width: 80%;
+    height: 3rem;
+    border-bottom: 0.25rem solid rgb(0, 0, 0);
+}
+
+.padding {
+    text-decoration: none;
+}

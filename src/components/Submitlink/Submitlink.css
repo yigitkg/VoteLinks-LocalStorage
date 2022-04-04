@@ -1,0 +1,10 @@
+.submitbutton {
+    padding: 2rem;
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: space-between;
+    width: 16rem;
+    align-items: center;
+    margin-left: 4rem;
+}
+
