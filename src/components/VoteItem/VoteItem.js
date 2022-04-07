@@ -6,7 +6,6 @@ import IconButton from '@mui/material/IconButton';
 
 const VoteItem = ({ title, link, vote, date, voteHandler}) => {
   const [counter, setCounter] = useState(vote)
-  const [currentDate, setCurrentDate] = useState(date)
   useEffect(() => {
     console.log(title, link, vote, date)
   },[title, link, vote, date])
@@ -22,8 +21,6 @@ const VoteItem = ({ title, link, vote, date, voteHandler}) => {
     }
   }
 
-
-
   return (
     <li className='itempadding'>
       <div className='outerblock'>
@@ -36,7 +33,7 @@ const VoteItem = ({ title, link, vote, date, voteHandler}) => {
           <div>
             <div>
               <h3>{title}</h3>
-              <a class="padding" target="_blank" href={link}>{link}</a>
+              <a target="_blank" href={link}>{link}</a>
             </div>
             <div>
               <IconButton aria-label="Add" onClick={incrementCounter}>

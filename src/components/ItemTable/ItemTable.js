@@ -4,12 +4,15 @@ import VoteItem from '../VoteItem/VoteItem'
 import './ItemTable.css'
 
 const ItemTable = ({items, voteHandler}) => {
+  useEffect(()=>{
+    console.log("items",items)
+  },[]) 
 
   return (
     <div>
       <ul className='itemsstyle'>
           {
-            Object.keys(items).map((item)=>{ return <VoteItem title={item} link={items[item].link} vote={items[item].vote} date={items[item].date} voteHandler={voteHandler}/>}) 
+            items.map((item)=>{ return <VoteItem key={item.title} title={item.title} link={item.link} vote={item.vote} date={item.date} voteHandler={voteHandler}/>}) 
           }
       </ul>
     </div>

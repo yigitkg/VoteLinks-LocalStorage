@@ -7,22 +7,23 @@ import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 
 const AddPage = () => {
-  const[name, setName] = useState("");
+  const[title, setTitle] = useState("");
   const[link, setLink] = useState("");
   let navigate = useNavigate();
   const saveToStorage = () => {
-    console.log(name, link)
+    console.log(title, link)
     let items = JSON.parse(localStorage.getItem("links"))
     if(!items){
-      items={};
+      items=[];
     }
     const newItem ={
+      title,
       link,
       vote:0,
       date:new Date(),
     }
-    if(name.length >0 && isValidUrl(newItem.link)){
-      items[name] = newItem
+    if(title.length >0 && isValidUrl(newItem.link)){
+      items.push(newItem) 
       localStorage.setItem("links", JSON.stringify(items));
     }
   }
@@ -45,7 +46,7 @@ const AddPage = () => {
         <div className='extrapadding'>Return to List</div>
       </div>
       <div className='extrapadding'>Add New Link</div>
-      <div className='extrapadding'><TextField onChange={(e)=>{ setName(e.target.value)}} id="outlined-basic" label="Link Name:" variant="outlined" placeholder='e.g. Alphabet'/></div>
+      <div className='extrapadding'><TextField onChange={(e)=>{ setTitle(e.target.value)}} id="outlined-basic" label="Link Name:" variant="outlined" placeholder='e.g. Alphabet'/></div>
       <div className='extrapadding'><TextField onChange={(e)=>{ setLink(e.target.value)}} id="outlined-basic" label="Link URL:" variant="outlined" placeholder='e.g. http://abc.xyz'/></div>
       <div className='addbutton'>
         <Button size="large" variant="contained" onClick={()=> {saveToStorage(); navigate('/')}}>ADD</Button>
